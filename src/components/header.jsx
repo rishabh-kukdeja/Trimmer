@@ -20,6 +20,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const {user, fetchUser} = UrlState();
+  console.log(user?.user_metadata?.profilepic);
 
   return (
     <>
@@ -34,7 +35,8 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger className="w-10 rounded-full overflow-hidden">
                 <Avatar>
-                  <AvatarImage src={user?.user_metadata?.profile_pic} />
+                  <AvatarImage src={user?.user_metadata?.profile_pic} className="object-contain" />
+                  
                   <AvatarFallback>User</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
@@ -53,7 +55,7 @@ const Header = () => {
                   onClick={() => {
                     fnLogout().then(() => {
                       fetchUser();
-                      navigate("/auth");
+                      navigate("/");
                     });
                   }}
                   className="text-red-400"

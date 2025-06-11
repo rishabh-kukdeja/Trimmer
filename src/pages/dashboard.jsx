@@ -9,6 +9,8 @@ import { UrlState } from '@/context'
 import { getUrls } from '@/db/apiUrls'
 import { getClicksForUrls } from '@/db/apiClicks'
 import LinkCard from '@/components/link-card'
+import CreateLink from '@/components/create-link'
+import Error from '@/components/error'
 
 
 const Dashboard = () => {
@@ -71,7 +73,7 @@ const Dashboard = () => {
 
       <div className='flex justify-between'>
         <h1 className='text-4xl font-extrabold'>My Links</h1>
-        <Button>Create Link</Button>
+        <CreateLink />
       </div>
 
       <div className='relative'>
